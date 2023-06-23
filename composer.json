@@ -34,23 +34,7 @@
   "scripts": {
     "test": "phpunit --coverage-text --colors=never"
   },
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-        "name": "phuongdm1987/clickhouse-client",
-        "version": "master",
-        "source": {
-          "url": "git@github.com:phuongdm1987/clickhouse-client.git",
-          "type": "git",
-          "reference": "origin/master"
-        }
-      }
-    }
-  ],
   "config": {
     "sort-packages": true
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }
