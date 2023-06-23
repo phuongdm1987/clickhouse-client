@@ -142,7 +142,7 @@ class Result implements \ArrayAccess, \Iterator, \Countable
      * ArrayAccess
      */
 
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->rows[$offset]);
     }
@@ -152,12 +152,12 @@ class Result implements \ArrayAccess, \Iterator, \Countable
         return $this->rows[$offset];
     }
 
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         throw ResultException::isReadonly();
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         throw ResultException::isReadonly();
     }
@@ -171,7 +171,7 @@ class Result implements \ArrayAccess, \Iterator, \Countable
         return $this->rows[$this->current];
     }
 
-    public function next()
+    public function next(): void
     {
         $this->current++;
     }
@@ -181,12 +181,12 @@ class Result implements \ArrayAccess, \Iterator, \Countable
         return $this->current;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return isset($this->rows[$this->current]);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->current = 0;
     }
@@ -195,7 +195,7 @@ class Result implements \ArrayAccess, \Iterator, \Countable
      * Countable
      */
 
-    public function count()
+    public function count(): int
     {
         return count($this->rows);
     }
